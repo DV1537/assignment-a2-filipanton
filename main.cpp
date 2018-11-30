@@ -73,7 +73,6 @@ int main()
     myReadFile.open("cords");
     while (myReadFile >> input)
     {
-        input= round( input* 1000.0 ) / 1000.0;
         counter++;
 
         if(counter % 2 == 0)
@@ -88,9 +87,38 @@ int main()
         }
 
     }
-    Polygon object(arrX, arrY, xArraySize);
-    Shape *s = &object;
-    std::cout << s->isConvex();
+    myReadFile.close();
+	if(!myReadFile.eof())
+		{
+			exit(EXIT_FAILURE);
+			
+		}
+    if(xArraySize == 1)
+    {
+        Point object(arrX, arrY);
+        Shape *s = &object;
+        std::cout << "Area: "<< s->area() << std::endl;
+    }
+    else if(xArraySize == 2)
+    {
+        Line object(arrX, arrY);
+        Shape *s = &object;
+        std::cout << "Area: "<< s->area() << std::endl;
+    }
+    else if(xArraySize == 3)
+    {
+        Triangle object(arrX, arrY);
+        Shape *s = &object;
+        std::cout << "Area: "<< s->area() << std::endl;
+    }
+    else if(xArraySize >= 4)
+    {
+        Polygon object(arrX, arrY, xArraySize);
+        Shape *s = &object;
+        std::cout << "Area: "<< s->area() << std::endl;
+        
+    }
+    
     getchar();
     return 0;
 }

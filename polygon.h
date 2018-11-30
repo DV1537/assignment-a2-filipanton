@@ -3,6 +3,8 @@
 #include "shape.h"
 #include <iostream>
 #include <string>
+#include <math.h>
+
 
 class Polygon : public Shape
 {
@@ -13,6 +15,8 @@ private:
 
 public:
     Polygon(float *x, float *y,int arraySize);
+    bool lineIntersect(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+    bool intersect();
     std::string getType();
     float area();
     float circumference();

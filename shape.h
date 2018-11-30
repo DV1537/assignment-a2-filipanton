@@ -19,6 +19,11 @@ class Shape
 private:
 
 public:
+    float decimalDigits(float a)
+    {
+        a = round( a* 1000.0 ) / 1000.0;
+        return a;
+    }
     virtual std::string getType() = 0;
     virtual float area() = 0;
     virtual float circumference() = 0;

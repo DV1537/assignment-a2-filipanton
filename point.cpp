@@ -26,7 +26,7 @@ float Point::circumference()
 
 ReturnCords Point::position()
 {
-
+    
     ReturnCords mposition(*xCord, *yCord);
     return mposition;
 }
@@ -42,6 +42,7 @@ float Point::distance(Shape *s)
     float deltaX = position().x - s->position().x;
     float deltaY = position().y - s->position().y;
     float distance = sqrt(pow(deltaX, 2.0) + pow(deltaY, 2.0));
+    distance = decimalDigits(distance);
     return distance;
 }
 
