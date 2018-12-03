@@ -91,7 +91,7 @@ float Polygon::area()
     {
         return -1;
     }
-    int area = 0;
+    float area = 0.0;
     int j = arraySize -1;
 
     for(int i = 0; i < arraySize; i++)
